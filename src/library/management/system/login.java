@@ -59,25 +59,25 @@ public class login extends javax.swing.JFrame {
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Welcome!");
         jLabel3.setToolTipText("");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 400, 300, 70));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 350, 300, 70));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("User ID :");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 530, 110, 30));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 480, 110, 30));
 
         UserIDTextField.setBackground(new java.awt.Color(255, 255, 255));
         UserIDTextField.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        getContentPane().add(UserIDTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 520, 180, 40));
+        getContentPane().add(UserIDTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 470, 260, 40));
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Password : ");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 600, 150, 40));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 550, 150, 40));
 
         UserPasswordField.setBackground(new java.awt.Color(255, 255, 255));
         UserPasswordField.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        getContentPane().add(UserPasswordField, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 600, 180, 40));
+        getContentPane().add(UserPasswordField, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 550, 260, 40));
 
         jButton2.setBackground(new java.awt.Color(255, 0, 0));
         jButton2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
@@ -88,12 +88,13 @@ public class login extends javax.swing.JFrame {
                 jButton2ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 690, 110, 40));
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 630, 110, 40));
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/login page.jpg"))); // NOI18N
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1700, 950));
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -107,7 +108,7 @@ public class login extends javax.swing.JFrame {
             pst.setString(2, UserPasswordField.getText());
             rs=pst.executeQuery();
             if(rs.next())
-            System.exit(0);
+            new Home().setVisible(true);
             else
             JOptionPane.showMessageDialog(this, "Please Enter Valied Credentials");
         } catch (SQLException ex) {
