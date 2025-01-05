@@ -13,7 +13,7 @@ public class Loading extends javax.swing.JFrame {
     /**
      * Creates new form Loading
      */
-    public Loading() {
+        public Loading() {
         initComponents();
         Thread t = new Thread(new Runnable() {
             @Override
@@ -23,7 +23,7 @@ public class Loading extends javax.swing.JFrame {
                         jProgressBar1.setValue(i);
                         Thread.sleep(50);
                         if(jProgressBar1.getString().equals("100%"))
-                            System.exit(0);
+                            new login().setVisible(true);
                         else if(jProgressBar1.getString().equals("50%")){
                             jLabel1.setText("Loading Modules.....");
                             
@@ -62,7 +62,6 @@ public class Loading extends javax.swing.JFrame {
         jProgressBar1 = new javax.swing.JProgressBar();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setAlwaysOnTop(true);
         setLocation(new java.awt.Point(500, 200));
         setMinimumSize(new java.awt.Dimension(649, 455));
         setUndecorated(true);
