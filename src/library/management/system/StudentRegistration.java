@@ -3,7 +3,12 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package library.management.system;
-
+import javax.swing.JOptionPane;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 /**
  *
  * @author CKShetty
@@ -37,7 +42,7 @@ public class StudentRegistration extends javax.swing.JFrame {
         txtname = new javax.swing.JTextField();
         txtcourse = new javax.swing.JTextField();
         txtbranch = new javax.swing.JTextField();
-        txtsemester = new javax.swing.JTextField();
+        txtsem = new javax.swing.JTextField();
         btnsave = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
 
@@ -89,7 +94,7 @@ public class StudentRegistration extends javax.swing.JFrame {
         getContentPane().add(txtname, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 290, 350, 50));
         getContentPane().add(txtcourse, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 410, 350, 50));
         getContentPane().add(txtbranch, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 530, 350, 50));
-        getContentPane().add(txtsemester, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 650, 350, 50));
+        getContentPane().add(txtsem, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 650, 350, 50));
 
         btnsave.setBackground(new java.awt.Color(204, 0, 51));
         btnsave.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
@@ -114,7 +119,54 @@ public class StudentRegistration extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    public void clear(){
+        txtbranch.setText("");
+        txtcourse.setText("");
+        txtid.setText("");
+        txtname.setText("");
+        txtsem.setText("");
+    }
+    
     private void btnsaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnsaveActionPerformed
+
+        PreparedStatement pst;
+        Connection c=Connect.Connection();
+        if(txtid.getText().equals("")){
+                JOptionPane.showMessageDialog(rootPane, "Please enter Student ID");
+                txtid.requestFocus();
+        }
+        else if(txtname.getText().equals("")){
+                JOptionPane.showMessageDialog(rootPane, "Please enter Student Name");
+                txtname.requestFocus();
+        }
+        else if(txtcourse.getText().equals("")){
+                JOptionPane.showMessageDialog(rootPane, "Please enter Course");
+                txtcourse.requestFocus();
+        }
+        else if(txtbranch.getText().equals("")){
+                JOptionPane.showMessageDialog(rootPane, "Please enter Branch of Student");
+                txtbranch.requestFocus();
+        }
+        else if(txtsem.getText().equals("")){
+                JOptionPane.showMessageDialog(rootPane, "Please enter Semester");
+                txtsem.requestFocus();
+        }
+        else{
+        try {
+            pst=c.prepareStatement("INSERT INTO `library`.`student` (`id`, `name`, `course`, `branch`, `semester`) VALUES (?,?,?,?,?)");
+            pst.setString(1, txtid.getText());
+            pst.setString(2, txtname.getText());
+            pst.setString(3, txtcourse.getText());
+            pst.setString(4, txtbranch.getText());
+            pst.setString(5, txtsem.getText());
+            pst.executeUpdate();
+            JOptionPane.showMessageDialog(rootPane, "Record Saved","Saved",JOptionPane.INFORMATION_MESSAGE);
+            clear();
+        } catch (SQLException ex) {
+            Logger.getLogger(login.class.getName()).log(Level.SEVERE, null, ex);
+        } 
+        }
+
         // TODO add your handling code here:
     }//GEN-LAST:event_btnsaveActionPerformed
 
@@ -167,6 +219,6 @@ public class StudentRegistration extends javax.swing.JFrame {
     private javax.swing.JTextField txtcourse;
     private javax.swing.JTextField txtid;
     private javax.swing.JTextField txtname;
-    private javax.swing.JTextField txtsemester;
+    private javax.swing.JTextField txtsem;
     // End of variables declaration//GEN-END:variables
 }
