@@ -26,22 +26,97 @@ public class StudentRegistration extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jButton1 = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        txtid = new javax.swing.JTextField();
+        txtname = new javax.swing.JTextField();
+        txtcourse = new javax.swing.JTextField();
+        txtbranch = new javax.swing.JTextField();
+        txtsemester = new javax.swing.JTextField();
+        btnsave = new javax.swing.JButton();
+        jLabel7 = new javax.swing.JLabel();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
+        setPreferredSize(new java.awt.Dimension(1366, 950));
+        setSize(new java.awt.Dimension(1366, 950));
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1366, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 950, Short.MAX_VALUE)
-        );
+        jButton1.setBackground(new java.awt.Color(255, 255, 255));
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/close icon.png"))); // NOI18N
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1300, 20, 40, 40));
+
+        jLabel1.setFont(new java.awt.Font("Silver Forte Grunge", 0, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel1.setText("Student Registration");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 60, 359, 64));
+
+        jLabel2.setFont(new java.awt.Font("Sitka Text", 1, 24)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel2.setText("Student ID :");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 180, -1, -1));
+
+        jLabel3.setFont(new java.awt.Font("Sitka Text", 1, 24)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel3.setText("Student Name");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 300, -1, -1));
+
+        jLabel4.setFont(new java.awt.Font("Sitka Text", 1, 24)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel4.setText("Course");
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 420, -1, -1));
+
+        jLabel5.setFont(new java.awt.Font("Sitka Text", 1, 24)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel5.setText("Branch");
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 540, -1, -1));
+
+        jLabel6.setFont(new java.awt.Font("Sitka Text", 1, 24)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel6.setText("Semester");
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 650, -1, -1));
+        getContentPane().add(txtid, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 170, 350, 50));
+        getContentPane().add(txtname, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 290, 350, 50));
+        getContentPane().add(txtcourse, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 410, 350, 50));
+        getContentPane().add(txtbranch, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 530, 350, 50));
+        getContentPane().add(txtsemester, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 650, 350, 50));
+
+        btnsave.setBackground(new java.awt.Color(204, 0, 51));
+        btnsave.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        btnsave.setForeground(new java.awt.Color(255, 255, 255));
+        btnsave.setText("Save");
+        btnsave.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnsaveActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnsave, new org.netbeans.lib.awtextra.AbsoluteConstraints(435, 797, 150, 50));
+
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/All Page Backgraound.jpg"))); // NOI18N
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1370, 950));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+
+        dispose();
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void btnsaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnsaveActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnsaveActionPerformed
 
     /**
      * @param args the command line arguments
@@ -79,5 +154,19 @@ public class StudentRegistration extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnsave;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JTextField txtbranch;
+    private javax.swing.JTextField txtcourse;
+    private javax.swing.JTextField txtid;
+    private javax.swing.JTextField txtname;
+    private javax.swing.JTextField txtsemester;
     // End of variables declaration//GEN-END:variables
 }
