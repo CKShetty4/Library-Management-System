@@ -1,0 +1,36 @@
+# NetBeans IDE
+nbproject/private/
+nbproject/build-impl.xml
+nbproject/genfiles.properties
+nbproject/private/private.properties
+nbproject/project.properties
+nbproject/private/private.xml
+
+# Java build files (compiled class files and logs)
+*.class
+*.log
+*.jar
+*.war
+*.ear
+*.zip
+
+# Directory where compiled class files are generated
+/build/
+/dist/
+
+# MySQL configuration and database files (if any)
+*.sql
+*.db
+*.bak
+
+# Operating system files
+
+Thumbs.db      # Windows
+Desktop.ini    # Windows
+
+# Java runtime files
+*.iml
+*.out
+
+# Maven or Ant build directories
+target/

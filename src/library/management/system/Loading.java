@@ -15,6 +15,36 @@ public class Loading extends javax.swing.JFrame {
      */
     public Loading() {
         initComponents();
+        Thread t = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                for (int i = 0; i <= 100; i++) {
+                    try {
+                        jProgressBar1.setValue(i);
+                        Thread.sleep(50);
+                        if(jProgressBar1.getString().equals("100%"))
+                            System.exit(0);
+                        else if(jProgressBar1.getString().equals("50%")){
+                            jLabel1.setText("Loading Modules.....");
+                            
+                        }
+                        else if(jProgressBar1.getString().equals("25%")){
+                            jLabel1.setText("Connecting Database....");
+//                            jLabel1.setForeground(Color.WHITE);
+                            }
+                        else if(jProgressBar1.getString().equals("5%")){
+                            jLabel1.setText("Loading....");
+//                            jLabel1.setForeground(Color.WHITE);
+                            }
+                        else if(jProgressBar1.getString().equals("95%"))
+                            jLabel1.setText("Launching Aplication....");
+                    } catch (InterruptedException ex) {
+                        //Logger.getLogger(NewJFrame.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                }
+            }
+        });
+        t.start();
     }
 
     /**
@@ -26,18 +56,32 @@ public class Loading extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        jPanel1 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jProgressBar1 = new javax.swing.JProgressBar();
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
-        );
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setAlwaysOnTop(true);
+        setLocation(new java.awt.Point(500, 200));
+        setMinimumSize(new java.awt.Dimension(649, 455));
+        setUndecorated(true);
+        setPreferredSize(new java.awt.Dimension(649, 455));
+        setSize(new java.awt.Dimension(649, 455));
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel1.setBackground(new java.awt.Color(153, 204, 255));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel1.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 400, 140, 40));
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Loading_Image.jpg"))); // NOI18N
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, -1, 420));
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 649, 430));
+        getContentPane().add(jProgressBar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 430, 649, 26));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -78,5 +122,9 @@ public class Loading extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JProgressBar jProgressBar1;
     // End of variables declaration//GEN-END:variables
 }
