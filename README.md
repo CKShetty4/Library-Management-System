@@ -91,7 +91,7 @@ The **Library Management System (LMS)** is a comprehensive tool designed to auto
 ## 📝 Usage Instructions
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/library-management-system.git
+   git clone https://github.com/CKShetty4/Library-Management-System.git
    ```
 2. Import the project into **NetBeans IDE**.
 3. Configure MySQL database:
